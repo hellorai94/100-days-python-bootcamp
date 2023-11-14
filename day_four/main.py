@@ -1,4 +1,4 @@
-#import random
+# import random
 
 # module
 
@@ -33,13 +33,6 @@ print(states_of_america)
 states_of_america.extend(["Bahia", "Feira de Santana"])
 print(states_of_america)
  """
-
-
-names = ["Raissa", "Hellen Cristina", "Thalles", "Emmannuelle"]
-nicknames = ["Rai", "Hellen", "Ta", "Manu"]
-
-names_and_nicks = [names, nicknames]
-print(names_and_nicks)
 
 
 

@@ -1,7 +1,7 @@
 import random
 from jogo_forca import lista_palavras
 from estagios import stages
-from logo  import ascii_art
+from logo import ascii_art
 import os 
 
 print("===================================================")

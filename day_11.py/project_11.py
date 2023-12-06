@@ -7,6 +7,7 @@ def deal_card():
 
 user_cards = []
 computer_cards = []
+game_over = False
 
 for _ in range(2):
     user_cards.append((deal_card()))
@@ -22,14 +23,34 @@ def calculate_score(cards):
 
     return sum(cards)
 
-user_score = calculate_score(cards= user_cards)
-computer_score = calculate_score(cards= computer_cards)
-print(f"Computer's first card: {computer_score}")
-_
-if user_score == 0 or computer_score == 0 or user_score > 21:
-    game_over = True
+while not game_over:
+    user_score = calculate_score(cards=user_cards)
+    computer_score = calculate_score(cards= computer_cards)
+    print(f"Computer's first card: {computer_cards[0]}")
+    print(f"User cards: {user_cards}")
+    print(f"Current user score: {user_score}")
 
-#Hint 10: If the game has not ended, ask the user if they want to draw another card. If yes, then use the deal_card() function to add another card to the user_cards List. If no, then the game has ended.
+    if user_score == 0 or computer_score == 0 or user_score > 21:
+        game_over = True
+    else:
+        another_card = input("Do you want to draw another card? - 'Y' or 'N'").lower()
+        if another_card == "y":
+            user_cards.append((deal_card()))   
+        else:
+            game_over = True
+    
+while computer_score != 0 and computer_score < 17:
+    computer_cards.append((deal_card())) 
+    calculate_score(cards=computer_cards)
+    computer_score = calculate_score(cards=computer_cards) 
+    print(f"Computer cards: {computer_cards}")
+    print(f"Current computer score: {user_score}")  
+    
+    
+
+
+   
+
 
 #Hint 11: The score will need to be rechecked with every new card drawn and the checks in Hint 9 need to be repeated until the game ends.
 
